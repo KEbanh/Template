@@ -1,0 +1,60 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="js/jquery/jquery-1.8.2.min.js"></script>
+		<script src="js/codemirror/codemirror.js"></script>
+		<script src="js/codemirror/mode/mysql/mysql.js"></script>
+		<script src="js/codemirror/keymap/vim.js"></script>
+		<script src="js/codemirror/lib/util/dialog.js"></script>
+		<script src="js/codemirror/lib/util/searchcursor.js"></script>
+		<script src="js/codemirror/lib/util/search.js"></script>
+		<script src="js/bootstrap/bootstrap.min.js"></script>
+		<script src="js/sqlcoon.js"></script>
+
+		<link rel="stylesheet" href="js/codemirror/lib/util/dialog.css">
+		<link rel="stylesheet" href="js/codemirror/lib/codemirror.css">
+		<link rel="stylesheet" href="js/codemirror/doc/docs.css">
+		<link rel="stylesheet" href="js/codemirror/theme/monokai.css">
+		<link rel="stylesheet" href="js/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="css/sqlcoon.css">
+
+  </head>
+  <body>
+  
+		<div id="header">
+			<center><div class="btn-group" data-toggle="buttons-checkbox">
+				<button type="button" class="btn btn-success" onmouseup="toggleSchemas(this)">DB-Tabellen</button>
+				<button type="button" class="btn btn-success" onmouseup="toggleResultPanel(this)">Ergebnis-View</button>
+				<button type="button" class="btn btn-success" onmouseup="toggleOutputPanel(this)">Ausgabe-View </button>
+				<a href="db_datenmodell.html"><button type="button" class="btn btn-success">Datenbankmodell</button></a>
+			</div>
+			</center>
+			<div id="option-control">
+				<input type="checkbox" id="dark-theme" onclick="darkTheme()">Dark Editor Theme
+			</div>
+		</div>
+		<div id="content">
+			<div id="left-panel">
+			</div>
+			<div id="right-panel">
+				<textarea id="code"></textarea>
+				<div id="result-panel">
+					<span class="lead title">Ergebnis der Datenbankabfrage</span>
+					<button id="execute" class="btn btn-success" title="Ctrl+Shift+Enter" onclick="executeCode(editor.getValue())">Ausführen!</button>
+					<div id="result"></div>
+					<hr />
+				</div>
+				<div id="output-panel">
+					<button id="clear" class="btn btn-info btn" onclick="clearOutput()">Löschen!</button>
+					<div id="output"></div>
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
